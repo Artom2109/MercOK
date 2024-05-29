@@ -1,0 +1,27 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+header, nav, main, footer {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+header h1, footer p {
+    text-align: center;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+nav ul li {
+    display: inline-block;
+    margin-right: 10px;
+}
+nav ul li:hover {
+    background-color: lightgray;
+}
+nav ul li:active {
+    background-color: darkgray;
+}

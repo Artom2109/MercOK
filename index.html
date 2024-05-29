@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практична робота №4</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #666;
+        }
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .dark-mode {
+            background-color: #333;
+            color: #fff;
+        }
+        .dark-mode header, .dark-mode footer {
+            background-color: #000;
+            color: #fff;
+        }
+        .dark-mode nav ul li a {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1 style="font-size: 36px; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">Практична робота №4</h1>
+    <p style="font-size: 18px;">Використання JavaScript на веб-сайті</p>
+</header>
+<nav>
+    <h2>Навігація</h2>
+    <ul>
+        <li><a href="about.html" id="smallFont">Історія Мерседеса </a></li>
+        <li><a href="development.html" id="mediumFont">Розвиток </a></li>
+        <li><a href="form.html" id="largeFont">Форма </a></li>
+        <li><a href="list.html">Список</a></li>
+        <li><a href="media.html">Медіа</a></li>
+    </ul>
+</nav>
+
+<main>
+    <h2>Вітаємо на нашому сайті!</h2>
+    <p>Це головна сторінка сайту про історію, розвиток та сучасність Mercedes-Benz.</p>
+    <button onclick="changeTheme()">Змінити тему</button>
+    <button onclick="changeText()">Це для любителів БМВ</button>
+    <p id="demo">Нажміть на кнопочку</p>
+</main>
+<footer>
+    <p>&copy; Дякую за те що відвідали даний сайт.</p>
+</footer>
+
+<script>
+    // Функція для зміни тексту
+    function changeText() {
+        document.getElementById("demo").innerHTML = "Любителям БМВ тут не місце)";
+    }
+
+    // Функція для зміни розміру шрифту на малий
+    function changeFontSizeSmall() {
+        document.body.style.fontSize = "14px";
+    }
+
+    // Функція для зміни розміру шрифту на середній
+    function changeFontSizeMedium() {
+        document.body.style.fontSize = "18px";
+    }
+
+    // Функція для зміни розміру шрифту на великий
+    function changeFontSizeLarge() {
+        document.body.style.fontSize = "24px";
+    }
+
+    // Додаємо обробник подій для кожної кнопки меню
+    document.getElementById("smallFont").addEventListener("click", changeFontSizeSmall);
+    document.getElementById("mediumFont").addEventListener("click", changeFontSizeMedium);
+    document.getElementById("largeFont").addEventListener("click", changeFontSizeLarge);
+
+    // Функція для зміни теми на чорну
+    function changeTheme() {
+        document.body.classList.toggle("dark-mode");
+    }
+</script>
+</body>
+</html>
