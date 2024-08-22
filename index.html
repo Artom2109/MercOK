@@ -3,122 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Практична робота №4</title>
+    <title>Практичні роботи HTML</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            margin: 0;
-            padding: 0;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-        header {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 20px 0;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            text-align: center;
-        }
-        nav ul li {
-            display: inline;
-            margin-right: 20px;
-        }
-        nav ul li a {
-            color: #333;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        nav ul li a:hover {
-            color: #666;
-        }
-        main {
-            padding: 20px;
-            text-align: center;
-        }
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 20px 0;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-        .dark-mode {
-            background-color: #333;
-            color: #fff;
-        }
-        .dark-mode header, .dark-mode footer {
-            background-color: #000;
-            color: #fff;
-        }
-        .dark-mode nav ul li a {
-            color: #fff;
-        }
-    </style>
+    <script src="scripts.js" defer></script>
 </head>
 <body>
 <header>
-    <h1 style="font-size: 36px; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">Практична робота №4</h1>
-    <p style="font-size: 18px;">Використання JavaScript на веб-сайті</p>
+    <h1 style="font-size: 36px; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">Основи веб-дизайну</h1>
+    <p style="font-size: 18px;">Розвиток, та історія марки Mersedes-Benz</p>
 </header>
-<nav>
+<nav class="nav-container">
     <h2>Навігація</h2>
-    <ul>
-        <li><a href="about.html" id="smallFont">Історія Мерседеса </a></li>
-        <li><a href="development.html" id="mediumFont">Розвиток </a></li>
-        <li><a href="form.html" id="largeFont">Форма </a></li>
+    <ul class="dropdown-menu">
+        <li><a href="about.html" id="smallFont">Історія Мерседеса</a></li>
+        <li><a href="development.html" id="mediumFont">Розвиток</a></li>
+        <li><a href="form.html" id="largeFont">Форма</a></li>
         <li><a href="list.html">Список</a></li>
         <li><a href="media.html">Медіа</a></li>
     </ul>
 </nav>
-
 <main>
     <h2>Вітаємо на нашому сайті!</h2>
     <p>Це головна сторінка сайту про історію, розвиток та сучасність Mercedes-Benz.</p>
     <button onclick="changeTheme()">Змінити тему</button>
     <button onclick="changeText()">Це для любителів БМВ</button>
+    <button onclick="showAlert()">Показати повідомлення</button>
     <p id="demo">Нажміть на кнопочку</p>
+
+    <form id="register" action="/" method="POST">
+        <label for="name">Ім'я:</label>
+        <input type="text" id="name" name="name" required>
+        <br><br>
+        <label for="email">Електронна пошта:</label>
+        <input type="email" id="email" name="email" required>
+        <br><br>
+        <label for="message">Повідомлення:</label>
+        <textarea id="message" name="message" required></textarea>
+        <br><br>
+        <button type="submit">Відправити</button>
+    </form>
 </main>
 <footer>
     <p>&copy; Дякую за те що відвідали даний сайт.</p>
 </footer>
 
 <script>
-    // Функція для зміни тексту
-    function changeText() {
-        document.getElementById("demo").innerHTML = "Любителям БМВ тут не місце)";
-    }
-
-    // Функція для зміни розміру шрифту на малий
-    function changeFontSizeSmall() {
-        document.body.style.fontSize = "14px";
-    }
-
-    // Функція для зміни розміру шрифту на середній
-    function changeFontSizeMedium() {
-        document.body.style.fontSize = "18px";
-    }
-
-    // Функція для зміни розміру шрифту на великий
-    function changeFontSizeLarge() {
-        document.body.style.fontSize = "24px";
-    }
-
-    // Додаємо обробник подій для кожної кнопки меню
-    document.getElementById("smallFont").addEventListener("click", changeFontSizeSmall);
-    document.getElementById("mediumFont").addEventListener("click", changeFontSizeMedium);
-    document.getElementById("largeFont").addEventListener("click", changeFontSizeLarge);
-
-    // Функція для зміни теми на чорну
+    // Додаткові JavaScript функції
     function changeTheme() {
-        document.body.classList.toggle("dark-mode");
+        document.body.classList.toggle('dark-mode');
+    }
+
+    function changeText() {
+        document.getElementById('demo').innerText = 'Вітаємо фанатів БМВ!';
+    }
+
+    function showAlert() {
+        alert('Це просте повідомлення!');
     }
 </script>
 </body>

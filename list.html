@@ -5,21 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Список</title>
     <link rel="stylesheet" href="styles.css">
+
 </head>
 <body>
 <header>
     <h1>Список</h1>
 </header>
 <nav>
-    <h2>Навігація</h2>
-    <ul>
-        <li><a href="index.html">Головна</a></li>
-        <li><a href="about.html">Історія Мерседеса</a></li>
-        <li><a href="development.html">Розвиток</a></li>
-        <li><a href="form.html">Форма</a></li>
-        <li><a href="media.html">Медіа</a></li>
-    </ul>
+    <div class="nav-container">
+        <h2>Навігація</h2>
+        <ul class="dropdown-menu">
+            <li><a href="index.html">Головна</a></li>
+            <li><a href="about.html">Історія Мерседеса</a></li>
+            <li><a href="development.html">Розвиток</a></li>
+            <li><a href="form.html">Форма</a></li>
+            <li><a href="list.html">Список</a></li>
+            <li><a href="media.html">Медіа</a></li>
+        </ul>
+    </div>
 </nav>
+
 <main>
     <section id="list">
         <h2>Список моделей Mercedes-Benz</h2>
@@ -32,6 +37,29 @@
         </ul>
     </section>
 </main>
+
+<table border="1px">
+    <tr>
+        <th>Назва</th>
+        <th>Рік</th>
+        <th>ціна</th>
+    </tr>
+    <tr>
+        <td>Mercedes</td>
+        <td>2007</td>
+        <td>11,000</td>
+    </tr>
+    <tr>
+        <td>Opel</td>
+        <td>2010</td>
+        <td>1,000</td>
+    </tr>
+    <tr>
+        <td>Audi</td>
+        <td>2000</td>
+        <td>3798</td>
+    </tr>
+</table>
 <footer>
     <p>&copy; Дякую за те що відвідали даний сайт.</p>
 </footer>

@@ -1,27 +1,103 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 20px;
+    background-color: #f0f0f0;
+    color: #000;
+    margin: 0;
+    padding: 0;
 }
-header, nav, main, footer {
-    border: 1px solid #ddd;
-    padding: 10px;
-    margin-bottom: 10px;
-}
-header h1, footer p {
+header {
+    background-color: #333;
+    color: #fff;
     text-align: center;
+    padding: 20px 0;
 }
-nav ul {
+nav {
+    background-color: #444;
+    color: #fff;
+    padding: 10px;
+    position: relative;
+}
+.nav-container {
+    position: relative;
+    display: inline-block;
+}
+.nav-container:hover .dropdown-menu {
+    opacity: 1;
+    transform: translateY(0);
+    display: block; /* Показати меню при наведенні */
+}
+.nav-container h2 {
+    margin: 0;
+    padding: 10px;
+    cursor: pointer;
+}
+.dropdown-menu {
+    display: none; /* Сховати меню за замовчуванням */
+    opacity: 0;
+    transform: translateY(-10px); /* Початкове положення меню */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Плавний перехід */
+    position: absolute;
+    background-color: #444;
+    color: #fff;
     list-style-type: none;
     padding: 0;
     margin: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    top: 100%;
+    left: 0;
+    z-index: 1000;
 }
-nav ul li {
-    display: inline-block;
-    margin-right: 10px;
+.dropdown-menu li {
+    margin: 0;
 }
-nav ul li:hover {
-    background-color: lightgray;
+.dropdown-menu li a {
+    display: block;
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
 }
-nav ul li:active {
-    background-color: darkgray;
+.dropdown-menu li a:hover {
+    background-color: #666;
+}
+main {
+    padding: 20px;
+    text-align: center;
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+.dark-mode header, .dark-mode footer {
+    background-color: #000;
+    color: #fff;
+}
+.dark-mode nav .dropdown-menu li a {
+    color: #fff;
+}
+/* Медіа-запити */
+@media (max-width: 768px) {
+    nav {
+        padding: 10px;
+    }
+    .dropdown-menu {
+        width: 100%;
+    }
+}
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 24px;
+    }
+    .nav-container h2 {
+        font-size: 14px;
+    }
+    main {
+        padding: 5px;
+    }
 }

@@ -5,22 +5,126 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Медіа</title>
     <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #666;
+        }
+
+        /* Паралакс секція */
+        .parallax-section {
+            position: relative;
+            height: 500px;
+            overflow: hidden;
+        }
+
+        .parallax-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            z-index: -1;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 50px 20px;
+            color: #000;
+        }
+
+        /* Галерея та відео */
+        #media {
+            padding: 20px;
+            text-align: center;
+        }
+
+        #media img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .dark-mode {
+            background-color: #333;
+            color: #fff;
+        }
+        .dark-mode header, .dark-mode footer {
+            background-color: #000;
+            color: #fff;
+        }
+        .dark-mode nav ul li a {
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
 <header>
     <h1>Медіа</h1>
 </header>
 <nav>
-    <h2>Навігація</h2>
-    <ul>
-        <li><a href="index.html">Головна</a></li>
-        <li><a href="about.html">Історія Мерседеса</a></li>
-        <li><a href="development.html">Розвиток</a></li>
-        <li><a href="form.html">Форма</a></li>
-        <li><a href="list.html">Список</a></li>
-    </ul>
+    <div class="nav-container">
+        <h2>Навігація</h2>
+        <ul class="dropdown-menu">
+            <li><a href="index.html">Головна</a></li>
+            <li><a href="about.html">Історія Мерседеса</a></li>
+            <li><a href="development.html">Розвиток</a></li>
+            <li><a href="form.html">Форма</a></li>
+            <li><a href="list.html">Список</a></li>
+            <li><a href="media.html">Медіа</a></li>
+        </ul>
+    </div>
 </nav>
+
 <main>
+    <!-- Паралакс секція -->
+    <section class="parallax-section">
+        <div class="parallax-background" style="background-image: url('https://cdn3.riastatic.com/photosnew/auto/photo/mercedes-benz_vito__490978383hd.jpg');"></div>
+    </section>
+    
+    <!-- Галерея та відео секція -->
     <section id="media">
         <h2>Галерея</h2>
         <img src="https://cdn3.riastatic.com/photosnew/auto/photo/mercedes-benz_vito__490978383hd.jpg" alt="Мерседес Бенц Віто">
